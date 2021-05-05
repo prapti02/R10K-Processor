@@ -415,12 +415,10 @@ void CPU::retire() {
         rob.retireHeadInstruction();
 
         // get T and Told Physical Registers
-        PhysicalRegister& destinationReg; 
-		destinationReg = inst->getDstPhysicalReg();
+        PhysicalRegister& destinationReg = inst->getDstPhysicalReg();
 		
         
-
-		// Update Arch Map Table
+	// Update Arch Map Table
         // check if destination register is not equal to -1 (Store)
 	
         if(inst->getDstOp() != -1){
